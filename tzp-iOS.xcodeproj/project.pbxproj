@@ -9,11 +9,23 @@
 /* Begin PBXBuildFile section */
 		30FB10C0A1457CDDD0C373DB /* Pods_tzp_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAB234B8DBF7558F95FD5FC4 /* Pods_tzp_Demo.framework */; };
 		3E02CD0D21A425C200854D16 /* tzp_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3E02CD0121A425C200854D16 /* tzp_iOS.xcdatamodeld */; };
-		3E02CD0E21A425C200854D16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E02CD0421A425C200854D16 /* Assets.xcassets */; };
 		3E02CD0F21A425C200854D16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E02CD0821A425C200854D16 /* LaunchScreen.storyboard */; };
-		3E02CD1021A425C200854D16 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E02CD0A21A425C200854D16 /* Map.storyboard */; };
+		3E02CD1021A425C200854D16 /* Subscribe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E02CD0A21A425C200854D16 /* Subscribe.storyboard */; };
 		3E02CD1121A425C200854D16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E02CD0B21A425C200854D16 /* AppDelegate.swift */; };
 		3E02CD1521A4274500854D16 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E02CD1421A4274500854D16 /* R.generated.swift */; };
+		3ECB8B0221A456F80032B923 /* UIView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF5D4CB21A455EE0025BF03 /* UIView+Rx.swift */; };
+		3ECB8B0421A46E420032B923 /* SubscriptionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB8B0321A46E420032B923 /* SubscriptionUseCase.swift */; };
+		3ECB8B0721A46F420032B923 /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB8B0621A46F420032B923 /* Subscription.swift */; };
+		3EF5D4AF21A42F0C0025BF03 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EF5D4AE21A42F0C0025BF03 /* TabBar.storyboard */; };
+		3EF5D4B221A430000025BF03 /* Overview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EF5D4B121A430000025BF03 /* Overview.storyboard */; };
+		3EF5D4B421A430650025BF03 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF5D4B321A430650025BF03 /* TabBarController.swift */; };
+		3EF5D4B621A434000025BF03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E02CD0421A425C200854D16 /* Assets.xcassets */; };
+		3EF5D4B821A43A660025BF03 /* SubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF5D4B721A43A660025BF03 /* SubscribeViewController.swift */; };
+		3EF5D4BA21A43AC90025BF03 /* SubscribeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF5D4B921A43AC90025BF03 /* SubscribeViewModel.swift */; };
+		3EF5D4BE21A43D0C0025BF03 /* UITabBar+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF5D4BD21A43D0C0025BF03 /* UITabBar+Rx.swift */; };
+		3EF5D4C021A443C20025BF03 /* Driver+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF5D4BF21A443C20025BF03 /* Driver+Rx.swift */; };
+		3EF5D4C321A446A10025BF03 /* SubscribeEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF5D4C221A446A10025BF03 /* SubscribeEditView.swift */; };
+		3EF5D4C621A449C40025BF03 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3EF5D4C821A449C40025BF03 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,9 +34,21 @@
 		3E02CD0221A425C200854D16 /* tzp_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = tzp_iOS.xcdatamodel; sourceTree = "<group>"; };
 		3E02CD0421A425C200854D16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E02CD0821A425C200854D16 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		3E02CD0A21A425C200854D16 /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		3E02CD0A21A425C200854D16 /* Subscribe.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Subscribe.storyboard; sourceTree = "<group>"; };
 		3E02CD0B21A425C200854D16 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E02CD1421A4274500854D16 /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		3ECB8B0321A46E420032B923 /* SubscriptionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionUseCase.swift; sourceTree = "<group>"; };
+		3ECB8B0621A46F420032B923 /* Subscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
+		3EF5D4AE21A42F0C0025BF03 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		3EF5D4B121A430000025BF03 /* Overview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Overview.storyboard; sourceTree = "<group>"; };
+		3EF5D4B321A430650025BF03 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		3EF5D4B721A43A660025BF03 /* SubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeViewController.swift; sourceTree = "<group>"; };
+		3EF5D4B921A43AC90025BF03 /* SubscribeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeViewModel.swift; sourceTree = "<group>"; };
+		3EF5D4BD21A43D0C0025BF03 /* UITabBar+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBar+Rx.swift"; sourceTree = "<group>"; };
+		3EF5D4BF21A443C20025BF03 /* Driver+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Driver+Rx.swift"; sourceTree = "<group>"; };
+		3EF5D4C221A446A10025BF03 /* SubscribeEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeEditView.swift; sourceTree = "<group>"; };
+		3EF5D4C721A449C40025BF03 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3EF5D4CB21A455EE0025BF03 /* UIView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Rx.swift"; sourceTree = "<group>"; };
 		964811F1F8BECE2AC69DE57C /* Pods-tzp-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tzp-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-tzp-Demo/Pods-tzp-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		AAB234B8DBF7558F95FD5FC4 /* Pods_tzp_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tzp_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5467AB9B7F559EC98FE9767 /* Pods-tzp-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tzp-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tzp-Demo/Pods-tzp-Demo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -83,7 +107,9 @@
 		3E02CD0021A425C200854D16 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				3ECB8B0521A46F320032B923 /* Model */,
 				3E02CD0121A425C200854D16 /* tzp_iOS.xcdatamodeld */,
+				3ECB8B0321A46E420032B923 /* SubscriptionUseCase.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -92,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				3E02CD0421A425C200854D16 /* Assets.xcassets */,
+				3EF5D4C821A449C40025BF03 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -99,9 +126,10 @@
 		3E02CD0521A425C200854D16 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				3E02CD0B21A425C200854D16 /* AppDelegate.swift */,
 				3E02CD1321A4273600854D16 /* Generated */,
 				3E02CD0621A425C200854D16 /* Screens */,
-				3E02CD0B21A425C200854D16 /* AppDelegate.swift */,
+				3EF5D4BB21A43CF20025BF03 /* Helper */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -110,7 +138,9 @@
 			isa = PBXGroup;
 			children = (
 				3E02CD0721A425C200854D16 /* Launch */,
-				3E02CD0921A425C200854D16 /* Map */,
+				3EF5D4AD21A42ED10025BF03 /* TabBar */,
+				3E02CD0921A425C200854D16 /* Subscribe */,
+				3EF5D4B021A42F980025BF03 /* Overview */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -123,12 +153,15 @@
 			path = Launch;
 			sourceTree = "<group>";
 		};
-		3E02CD0921A425C200854D16 /* Map */ = {
+		3E02CD0921A425C200854D16 /* Subscribe */ = {
 			isa = PBXGroup;
 			children = (
-				3E02CD0A21A425C200854D16 /* Map.storyboard */,
+				3EF5D4C121A446830025BF03 /* Views */,
+				3E02CD0A21A425C200854D16 /* Subscribe.storyboard */,
+				3EF5D4B721A43A660025BF03 /* SubscribeViewController.swift */,
+				3EF5D4B921A43AC90025BF03 /* SubscribeViewModel.swift */,
 			);
-			path = Map;
+			path = Subscribe;
 			sourceTree = "<group>";
 		};
 		3E02CD1321A4273600854D16 /* Generated */ = {
@@ -137,6 +170,57 @@
 				3E02CD1421A4274500854D16 /* R.generated.swift */,
 			);
 			path = Generated;
+			sourceTree = "<group>";
+		};
+		3ECB8B0521A46F320032B923 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3ECB8B0621A46F420032B923 /* Subscription.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3EF5D4AD21A42ED10025BF03 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				3EF5D4AE21A42F0C0025BF03 /* TabBar.storyboard */,
+				3EF5D4B321A430650025BF03 /* TabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		3EF5D4B021A42F980025BF03 /* Overview */ = {
+			isa = PBXGroup;
+			children = (
+				3EF5D4B121A430000025BF03 /* Overview.storyboard */,
+			);
+			path = Overview;
+			sourceTree = "<group>";
+		};
+		3EF5D4BB21A43CF20025BF03 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				3EF5D4BC21A43CF90025BF03 /* Rx */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		3EF5D4BC21A43CF90025BF03 /* Rx */ = {
+			isa = PBXGroup;
+			children = (
+				3EF5D4BD21A43D0C0025BF03 /* UITabBar+Rx.swift */,
+				3EF5D4BF21A443C20025BF03 /* Driver+Rx.swift */,
+				3EF5D4CB21A455EE0025BF03 /* UIView+Rx.swift */,
+			);
+			path = Rx;
+			sourceTree = "<group>";
+		};
+		3EF5D4C121A446830025BF03 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3EF5D4C221A446A10025BF03 /* SubscribeEditView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		83692D875C7E3ABEA9B4F568 /* Frameworks */ = {
@@ -208,9 +292,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EF5D4AF21A42F0C0025BF03 /* TabBar.storyboard in Resources */,
+				3EF5D4C621A449C40025BF03 /* Localizable.strings in Resources */,
 				3E02CD0F21A425C200854D16 /* LaunchScreen.storyboard in Resources */,
-				3E02CD0E21A425C200854D16 /* Assets.xcassets in Resources */,
-				3E02CD1021A425C200854D16 /* Map.storyboard in Resources */,
+				3EF5D4B221A430000025BF03 /* Overview.storyboard in Resources */,
+				3E02CD1021A425C200854D16 /* Subscribe.storyboard in Resources */,
+				3EF5D4B621A434000025BF03 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,16 +312,17 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/App/Generated/R.ignore.generated.swift",
 			);
 			name = R.swift;
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/App/Generated/R.generated.swift",
+				"$(SRCROOT)/App/Generated/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT\"\n";
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/App/Generated\"\ndate > \"$SRCROOT/App/Generated/R.ignore.generated.swift\"\n";
 		};
 		6331324026306A6567838200 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -245,20 +333,18 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-tzp-Demo/Pods-tzp-Demo-frameworks.sh",
-				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework",
-				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework.dSYM",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/Mapbox.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,13 +381,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EF5D4C321A446A10025BF03 /* SubscribeEditView.swift in Sources */,
+				3EF5D4B421A430650025BF03 /* TabBarController.swift in Sources */,
+				3ECB8B0221A456F80032B923 /* UIView+Rx.swift in Sources */,
 				3E02CD1121A425C200854D16 /* AppDelegate.swift in Sources */,
 				3E02CD0D21A425C200854D16 /* tzp_iOS.xcdatamodeld in Sources */,
+				3EF5D4C021A443C20025BF03 /* Driver+Rx.swift in Sources */,
+				3ECB8B0721A46F420032B923 /* Subscription.swift in Sources */,
+				3EF5D4BA21A43AC90025BF03 /* SubscribeViewModel.swift in Sources */,
+				3ECB8B0421A46E420032B923 /* SubscriptionUseCase.swift in Sources */,
 				3E02CD1521A4274500854D16 /* R.generated.swift in Sources */,
+				3EF5D4B821A43A660025BF03 /* SubscribeViewController.swift in Sources */,
+				3EF5D4BE21A43D0C0025BF03 /* UITabBar+Rx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3EF5D4C821A449C40025BF03 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3EF5D4C721A449C40025BF03 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		3E02CCF921A4243B00854D16 /* Debug */ = {

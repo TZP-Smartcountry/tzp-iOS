@@ -7,8 +7,8 @@ use_frameworks!
 def corePods
 
 	pod 'R.swift', '~> 5.0.0.alpha.2'
-	pod 'Mapbox-iOS-SDK', '~> 4.6'
 	pod 'RxSwift'
+	pod 'RxCocoa'
 end
 
 target 'tzp-Demo' do
