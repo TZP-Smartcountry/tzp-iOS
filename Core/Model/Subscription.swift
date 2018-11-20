@@ -7,11 +7,26 @@
 //
 
 import Foundation
+import CoreLocation
 
-struct Subscription {
+struct Subscription: Codable {
 
 	let id: String?
 	let author: String?
 
-	let location: Any
+	let location: GeoJsonCircle
+
+	init(location: CLLocationCoordinate2D, radius: Double) {
+		self.location = GeoJsonCircle(radius: radius, coordinates: [location.latitude, location.longitude])
+		self.id = nil
+		self.author = nil
+	}
+}
+
+struct GeoJsonCircle: Codable {
+
+	let type = "Circle"
+	let properties = ["radius_units": "m"]
+	let radius: Double
+	let coordinates: [Double]
 }

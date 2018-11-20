@@ -68,12 +68,18 @@ class SubscribeEditView: UIView {
 		self.slider?.maximumValue = Float(Constants.maxDistance)
 		self.slider?.minimumValue = Float(Constants.minDistance)
 		self.slider?.value = Float(Constants.defaultValue)
-		self.slider?.sendActions(for: .valueChanged)
 		self.proceedButton?.layer.cornerRadius = 5
+	}
+
+	override func layoutSubviews() {
+		super.layoutSubviews()
+
+		self.slider?.sendActions(for: .valueChanged)
 	}
 
 	private func createBinding() {
 		self.titleLabel?.text = R.string.localizable.subscribeEditTitle()
+		self.proceedButton?.setTitle(R.string.localizable.subscribeEditButton(), for: .normal)
 
 		self.slider?.rx.controlEvent(UIControlEvents.valueChanged)
 			.map { _ -> Int in

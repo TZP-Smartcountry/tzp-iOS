@@ -13,7 +13,7 @@ import RxCocoa
 
 class SubscribeViewController: UIViewController {
 
-	@IBOutlet private weak var mapView: MKMapView?
+	@IBOutlet fileprivate weak var mapView: MKMapView?
 
 	@IBOutlet fileprivate weak var poiImageView: UIImageView?
 	@IBOutlet fileprivate weak var poiDiameterView: UIView?
@@ -24,13 +24,18 @@ class SubscribeViewController: UIViewController {
 
 	private let viewModel = SubscribeViewModel()
 	private let disposeBag = DisposeBag()
+	private let manager = CLLocationManager()
+
+	private let mapRectChangedRelay = PublishRelay<Void>()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		self.createBinding()
-
 		self.mapView?.delegate = self
+
+		manager.requestWhenInUseAuthorization()
+
+		self.createBinding()
 	}
 
 	private func createBinding() {
@@ -41,8 +46,26 @@ class SubscribeViewController: UIViewController {
 
 		self.viewModel.state.drive(self.rx.stateChanged).disposed(by: self.disposeBag)
 		self.viewModel.state.map { $0 == .add }.drive(self.tabBarController?.tabBar.rx.hideBar()).disposed(by: self.disposeBag)
+		self.viewModel.subscriptions.drive(self.rx.subscriptions).disposed(by: self.disposeBag)
 
-		self.editView?.diameter?
+		self.editView?.proceedTrigger?.drive(onNext: { [weak self] (diameter) in
+			guard let location = self?.mapView?.centerCoordinate else {
+				return
+			}
+
+			self?.viewModel.subscribe(radius: Double(diameter) / 2, location: location)
+		}).disposed(by: self.disposeBag)
+
+		self.observeDiameter()
+		self.viewModel.refreshSubscriptions()
+	}
+
+	private func observeDiameter() {
+		guard let diameter = self.editView?.diameter else {
+			return
+		}
+
+		Driver.combineLatest(diameter, self.mapRectChangedRelay.asDriver(onErrorJustReturn: ()), resultSelector: { diameter, _ in return diameter })
 			.map { [weak self] in CGFloat((self?.pixelPerMeter ?? 0) * Double($0)) }
 			.drive(self.rx.updateDiameterView)
 			.disposed(by: self.disposeBag)
@@ -78,7 +101,13 @@ extension SubscribeViewController: MKMapViewDelegate {
 	}
 
 	func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-		return MKPolygonRenderer(overlay: overlay)
+		let renderer = MKCircleRenderer(overlay: overlay)
+		renderer.fillColor = #colorLiteral(red: 1, green: 0.662745098, blue: 0.07843137255, alpha: 1).withAlphaComponent(0.4)
+		return renderer
+	}
+
+	func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
+		self.mapRectChangedRelay.accept(())
 	}
 }
 
@@ -102,5 +131,27 @@ extension Reactive where Base == SubscribeViewController {
 			controller.poiDiameterView?.layer.cornerRadius = diameter / 2
 			controller.poiDiameterView?.layoutIfNeeded()
 		}
+	}
+
+	var subscriptions: Binder<[Subscription]> {
+		return Binder(base) { controller, subscriptions in
+			let circles = controller.mapView?.overlays.filter { $0 is MKCircle } ?? []
+			controller.mapView?.removeOverlays(circles)
+			controller.mapView?.addOverlays(subscriptions.map { $0.circle })
+		}
+	}
+}
+
+private extension Subscription {
+
+	var circle: MKCircle {
+		return MKCircle(center: self.location.location, radius: self.location.radius)
+	}
+}
+
+private extension GeoJsonCircle {
+
+	var location: CLLocationCoordinate2D {
+		return CLLocationCoordinate2D(latitude: self.coordinates[0], longitude: self.coordinates[1])
 	}
 }

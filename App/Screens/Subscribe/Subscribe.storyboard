@@ -32,8 +32,8 @@
                                     <action selector="locateMeTappedWithSender:" destination="nlD-Qq-ES4" eventType="touchUpInside" id="563-Sb-NAY"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UFt-Xz-VkS">
-                                <rect key="frame" x="187" y="449.66666666666669" width="1" height="1"/>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UFt-Xz-VkS">
+                                <rect key="frame" x="187" y="405.66666666666669" width="1" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="1" id="XlF-Z1-9DJ"/>
@@ -87,13 +87,13 @@
                                 </connections>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_edit_poi" translatesAutoresizingMaskIntoConstraints="NO" id="yw2-no-Kzn">
-                                <rect key="frame" x="169.66666666666666" y="414" width="36" height="36"/>
+                                <rect key="frame" x="169.66666666666666" y="370" width="36" height="36"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="DzJ-vg-5rN" firstAttribute="trailing" secondItem="Pda-4Q-Jbh" secondAttribute="trailing" constant="16" id="07a-V6-zyv"/>
-                            <constraint firstItem="UFt-Xz-VkS" firstAttribute="centerY" secondItem="5MN-3k-KFy" secondAttribute="centerY" id="9Dx-HI-Lus"/>
+                            <constraint firstItem="UFt-Xz-VkS" firstAttribute="centerY" secondItem="wFh-Vo-ecq" secondAttribute="centerY" id="8aq-K3-ObF"/>
                             <constraint firstAttribute="bottom" secondItem="5MN-3k-KFy" secondAttribute="bottom" id="I5o-lc-M9q"/>
                             <constraint firstAttribute="bottom" secondItem="0Ur-Mq-Pne" secondAttribute="bottom" id="J4T-td-pmk"/>
                             <constraint firstItem="yw2-no-Kzn" firstAttribute="centerX" secondItem="UFt-Xz-VkS" secondAttribute="centerX" id="JFP-Ad-Erg"/>

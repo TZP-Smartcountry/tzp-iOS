@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 import RxSwift
 import RxCocoa
 
@@ -18,9 +19,12 @@ class SubscribeViewModel {
 		case add
 	}
 
+	private let disposeBag = DisposeBag()
+
 	// MARK: - Relay
 
 	private let stateRelay = BehaviorRelay(value: State.display)
+	private let subscriptionRelay = PublishRelay<[Subscription]>()
 
 	// MARK: - Driver
 
@@ -28,9 +32,33 @@ class SubscribeViewModel {
 		return self.stateRelay.asDriver()
 	}
 
+	var subscriptions: Driver<[Subscription]> {
+		return self.subscriptionRelay.asDriver(onErrorJustReturn: [])
+	}
+
 	// MARK: - I/O
 
 	func enterAddMode() {
 		self.stateRelay.accept(.add)
+	}
+
+	func subscribe(radius: Double, location: CLLocationCoordinate2D) {
+		self.stateRelay.accept(.display)
+
+		SubscriptionUseCase.shared
+			.subscribe(for: Subscription(location: location, radius: radius))
+			.subscribe(onCompleted: { [weak self] in
+				self?.refreshSubscriptions()
+			})
+			.disposed(by: self.disposeBag)
+	}
+
+	func refreshSubscriptions() {
+		SubscriptionUseCase.shared
+			.getAll()
+			.subscribe(onSuccess: { [weak self] (subscriptions) in
+				self?.subscriptionRelay.accept(subscriptions)
+			})
+			.disposed(by: self.disposeBag)
 	}
 }
