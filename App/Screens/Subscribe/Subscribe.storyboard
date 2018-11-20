@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5MN-3k-KFy">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5MN-3k-KFy">
                                 <rect key="frame" x="0.0" y="88" width="375" height="724"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pda-4Q-Jbh">
@@ -27,6 +27,7 @@
                                     <constraint firstAttribute="width" constant="50" id="20g-0L-azn"/>
                                     <constraint firstAttribute="height" constant="50" id="Eqy-Rc-kG1"/>
                                 </constraints>
+                                <color key="tintColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
                                 <state key="normal" image="ic_location"/>
                                 <connections>
                                     <action selector="locateMeTappedWithSender:" destination="nlD-Qq-ES4" eventType="touchUpInside" id="563-Sb-NAY"/>
@@ -60,6 +61,7 @@
                                             </label>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="5Q6-jJ-cIv">
                                                 <rect key="frame" x="-2" y="50" width="347" height="31"/>
+                                                <color key="tintColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
                                             </slider>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DvF-gR-FeE">
                                                 <rect key="frame" x="0.0" y="88" width="343" height="48"/>
@@ -108,7 +110,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DzJ-vg-5rN"/>
                     </view>
-                    <navigationItem key="navigationItem" id="r78-Tc-xm7"/>
+                    <navigationItem key="navigationItem" id="r78-Tc-xm7">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="VqX-zb-fWj">
+                            <connections>
+                                <action selector="refreshTappedWithSender:" destination="nlD-Qq-ES4" id="hmj-Np-aBz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="editView" destination="0Ur-Mq-Pne" id="ifK-Jc-Jch"/>
                         <outlet property="mapView" destination="5MN-3k-KFy" id="pFt-xJ-ckV"/>
@@ -130,6 +138,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="spj-Xj-e00">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

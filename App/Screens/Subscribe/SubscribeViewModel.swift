@@ -25,6 +25,7 @@ class SubscribeViewModel {
 
 	private let stateRelay = BehaviorRelay(value: State.display)
 	private let subscriptionRelay = PublishRelay<[Subscription]>()
+	private let zonesRelay = PublishRelay<[Zone]>()
 
 	// MARK: - Driver
 
@@ -34,6 +35,10 @@ class SubscribeViewModel {
 
 	var subscriptions: Driver<[Subscription]> {
 		return self.subscriptionRelay.asDriver(onErrorJustReturn: [])
+	}
+
+	var zones: Driver<[Zone]> {
+		return self.zonesRelay.asDriver(onErrorJustReturn: [])
 	}
 
 	// MARK: - I/O
@@ -58,6 +63,15 @@ class SubscribeViewModel {
 			.getAll()
 			.subscribe(onSuccess: { [weak self] (subscriptions) in
 				self?.subscriptionRelay.accept(subscriptions)
+			})
+			.disposed(by: self.disposeBag)
+	}
+
+	func refreshZones() {
+		ZonesUseCase.shared
+			.getAll()
+			.subscribe(onSuccess: { [weak self] (zones) in
+				self?.zonesRelay.accept(zones)
 			})
 			.disposed(by: self.disposeBag)
 	}

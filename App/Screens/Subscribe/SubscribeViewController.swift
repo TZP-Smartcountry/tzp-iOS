@@ -33,6 +33,7 @@ class SubscribeViewController: UIViewController {
 
 		self.mapView?.delegate = self
 
+		manager.delegate = self
 		manager.requestWhenInUseAuthorization()
 
 		self.createBinding()
@@ -47,6 +48,7 @@ class SubscribeViewController: UIViewController {
 		self.viewModel.state.drive(self.rx.stateChanged).disposed(by: self.disposeBag)
 		self.viewModel.state.map { $0 == .add }.drive(self.tabBarController?.tabBar.rx.hideBar()).disposed(by: self.disposeBag)
 		self.viewModel.subscriptions.drive(self.rx.subscriptions).disposed(by: self.disposeBag)
+		self.viewModel.zones.drive(self.rx.zones).disposed(by: self.disposeBag)
 
 		self.editView?.proceedTrigger?.drive(onNext: { [weak self] (diameter) in
 			guard let location = self?.mapView?.centerCoordinate else {
@@ -58,6 +60,7 @@ class SubscribeViewController: UIViewController {
 
 		self.observeDiameter()
 		self.viewModel.refreshSubscriptions()
+		self.viewModel.refreshZones()
 	}
 
 	private func observeDiameter() {
@@ -82,11 +85,15 @@ class SubscribeViewController: UIViewController {
 	@IBAction private func locateMeTapped(sender: Any) {
 		self.mapView?.userTrackingMode = .follow
 	}
+
+	@IBAction private func refreshTapped(sender: Any) {
+		self.viewModel.refreshZones()
+	}
 }
 
 // MARK: - MapView
 
-extension SubscribeViewController: MKMapViewDelegate {
+extension SubscribeViewController: MKMapViewDelegate, CLLocationManagerDelegate {
 
 	fileprivate var pixelPerMeter: Double {
 		guard
@@ -108,6 +115,10 @@ extension SubscribeViewController: MKMapViewDelegate {
 
 	func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
 		self.mapRectChangedRelay.accept(())
+	}
+
+	func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+		self.mapView?.userTrackingMode = .follow
 	}
 }
 
@@ -138,6 +149,14 @@ extension Reactive where Base == SubscribeViewController {
 			let circles = controller.mapView?.overlays.filter { $0 is MKCircle } ?? []
 			controller.mapView?.removeOverlays(circles)
 			controller.mapView?.addOverlays(subscriptions.map { $0.circle })
+		}
+	}
+
+	var zones: Binder<[Zone]> {
+		return Binder(base) { controller, zones in
+			let annotations = controller.mapView?.annotations.filter { $0 is ZoneAnnotation } ?? []
+			controller.mapView?.removeAnnotations(annotations)
+			controller.mapView?.addAnnotations(zones.map { ZoneAnnotation($0) })
 		}
 	}
 }

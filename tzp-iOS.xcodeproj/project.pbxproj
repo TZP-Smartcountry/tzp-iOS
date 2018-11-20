@@ -16,6 +16,9 @@
 		3ECB8B0221A456F80032B923 /* UIView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF5D4CB21A455EE0025BF03 /* UIView+Rx.swift */; };
 		3ECB8B0421A46E420032B923 /* SubscriptionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB8B0321A46E420032B923 /* SubscriptionUseCase.swift */; };
 		3ECB8B0721A46F420032B923 /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB8B0621A46F420032B923 /* Subscription.swift */; };
+		3ECB8B0921A496B90032B923 /* ZonesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB8B0821A496B90032B923 /* ZonesUseCase.swift */; };
+		3ECB8B0B21A497C70032B923 /* Zone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB8B0A21A497C70032B923 /* Zone.swift */; };
+		3ECB8B0D21A4A28E0032B923 /* ZoneAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB8B0C21A4A28E0032B923 /* ZoneAnnotation.swift */; };
 		3EF5D4AF21A42F0C0025BF03 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EF5D4AE21A42F0C0025BF03 /* TabBar.storyboard */; };
 		3EF5D4B221A430000025BF03 /* Overview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EF5D4B121A430000025BF03 /* Overview.storyboard */; };
 		3EF5D4B421A430650025BF03 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF5D4B321A430650025BF03 /* TabBarController.swift */; };
@@ -39,6 +42,9 @@
 		3E02CD1421A4274500854D16 /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		3ECB8B0321A46E420032B923 /* SubscriptionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionUseCase.swift; sourceTree = "<group>"; };
 		3ECB8B0621A46F420032B923 /* Subscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
+		3ECB8B0821A496B90032B923 /* ZonesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZonesUseCase.swift; sourceTree = "<group>"; };
+		3ECB8B0A21A497C70032B923 /* Zone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zone.swift; sourceTree = "<group>"; };
+		3ECB8B0C21A4A28E0032B923 /* ZoneAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneAnnotation.swift; sourceTree = "<group>"; };
 		3EF5D4AE21A42F0C0025BF03 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		3EF5D4B121A430000025BF03 /* Overview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Overview.storyboard; sourceTree = "<group>"; };
 		3EF5D4B321A430650025BF03 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -110,6 +116,7 @@
 				3ECB8B0521A46F320032B923 /* Model */,
 				3E02CD0121A425C200854D16 /* tzp_iOS.xcdatamodeld */,
 				3ECB8B0321A46E420032B923 /* SubscriptionUseCase.swift */,
+				3ECB8B0821A496B90032B923 /* ZonesUseCase.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -176,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				3ECB8B0621A46F420032B923 /* Subscription.swift */,
+				3ECB8B0A21A497C70032B923 /* Zone.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -219,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				3EF5D4C221A446A10025BF03 /* SubscribeEditView.swift */,
+				3ECB8B0C21A4A28E0032B923 /* ZoneAnnotation.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -386,9 +395,12 @@
 				3ECB8B0221A456F80032B923 /* UIView+Rx.swift in Sources */,
 				3E02CD1121A425C200854D16 /* AppDelegate.swift in Sources */,
 				3E02CD0D21A425C200854D16 /* tzp_iOS.xcdatamodeld in Sources */,
+				3ECB8B0D21A4A28E0032B923 /* ZoneAnnotation.swift in Sources */,
 				3EF5D4C021A443C20025BF03 /* Driver+Rx.swift in Sources */,
+				3ECB8B0921A496B90032B923 /* ZonesUseCase.swift in Sources */,
 				3ECB8B0721A46F420032B923 /* Subscription.swift in Sources */,
 				3EF5D4BA21A43AC90025BF03 /* SubscribeViewModel.swift in Sources */,
+				3ECB8B0B21A497C70032B923 /* Zone.swift in Sources */,
 				3ECB8B0421A46E420032B923 /* SubscriptionUseCase.swift in Sources */,
 				3E02CD1521A4274500854D16 /* R.generated.swift in Sources */,
 				3EF5D4B821A43A660025BF03 /* SubscribeViewController.swift in Sources */,
