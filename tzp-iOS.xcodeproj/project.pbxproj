@@ -19,6 +19,9 @@
 		3ECB8B0921A496B90032B923 /* ZonesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB8B0821A496B90032B923 /* ZonesUseCase.swift */; };
 		3ECB8B0B21A497C70032B923 /* Zone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB8B0A21A497C70032B923 /* Zone.swift */; };
 		3ECB8B0D21A4A28E0032B923 /* ZoneAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB8B0C21A4A28E0032B923 /* ZoneAnnotation.swift */; };
+		3ECB8B1021A4B4210032B923 /* ZoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB8B0F21A4B4210032B923 /* ZoneTableViewCell.swift */; };
+		3ECB8B1221A4B5780032B923 /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB8B1121A4B5780032B923 /* OverviewViewController.swift */; };
+		3ECB8B1421A4B5990032B923 /* OverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB8B1321A4B5990032B923 /* OverviewViewModel.swift */; };
 		3EF5D4AF21A42F0C0025BF03 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EF5D4AE21A42F0C0025BF03 /* TabBar.storyboard */; };
 		3EF5D4B221A430000025BF03 /* Overview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EF5D4B121A430000025BF03 /* Overview.storyboard */; };
 		3EF5D4B421A430650025BF03 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF5D4B321A430650025BF03 /* TabBarController.swift */; };
@@ -45,6 +48,9 @@
 		3ECB8B0821A496B90032B923 /* ZonesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZonesUseCase.swift; sourceTree = "<group>"; };
 		3ECB8B0A21A497C70032B923 /* Zone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zone.swift; sourceTree = "<group>"; };
 		3ECB8B0C21A4A28E0032B923 /* ZoneAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneAnnotation.swift; sourceTree = "<group>"; };
+		3ECB8B0F21A4B4210032B923 /* ZoneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneTableViewCell.swift; sourceTree = "<group>"; };
+		3ECB8B1121A4B5780032B923 /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
+		3ECB8B1321A4B5990032B923 /* OverviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewModel.swift; sourceTree = "<group>"; };
 		3EF5D4AE21A42F0C0025BF03 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		3EF5D4B121A430000025BF03 /* Overview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Overview.storyboard; sourceTree = "<group>"; };
 		3EF5D4B321A430650025BF03 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -188,6 +194,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		3ECB8B0E21A4B0210032B923 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3ECB8B0F21A4B4210032B923 /* ZoneTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		3EF5D4AD21A42ED10025BF03 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,7 +214,10 @@
 		3EF5D4B021A42F980025BF03 /* Overview */ = {
 			isa = PBXGroup;
 			children = (
+				3ECB8B0E21A4B0210032B923 /* Views */,
 				3EF5D4B121A430000025BF03 /* Overview.storyboard */,
+				3ECB8B1121A4B5780032B923 /* OverviewViewController.swift */,
+				3ECB8B1321A4B5990032B923 /* OverviewViewModel.swift */,
 			);
 			path = Overview;
 			sourceTree = "<group>";
@@ -391,6 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EF5D4C321A446A10025BF03 /* SubscribeEditView.swift in Sources */,
+				3ECB8B1021A4B4210032B923 /* ZoneTableViewCell.swift in Sources */,
 				3EF5D4B421A430650025BF03 /* TabBarController.swift in Sources */,
 				3ECB8B0221A456F80032B923 /* UIView+Rx.swift in Sources */,
 				3E02CD1121A425C200854D16 /* AppDelegate.swift in Sources */,
@@ -404,7 +422,9 @@
 				3ECB8B0421A46E420032B923 /* SubscriptionUseCase.swift in Sources */,
 				3E02CD1521A4274500854D16 /* R.generated.swift in Sources */,
 				3EF5D4B821A43A660025BF03 /* SubscribeViewController.swift in Sources */,
+				3ECB8B1221A4B5780032B923 /* OverviewViewController.swift in Sources */,
 				3EF5D4BE21A43D0C0025BF03 /* UITabBar+Rx.swift in Sources */,
+				3ECB8B1421A4B5990032B923 /* OverviewViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
