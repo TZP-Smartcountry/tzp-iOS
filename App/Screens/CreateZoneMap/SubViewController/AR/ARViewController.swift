@@ -30,16 +30,16 @@ class ARViewController: UIViewController {
 	private var panGesture: UIPanGestureRecognizer?
 	private var selectedNode: ZoneNode?
 
-	lazy var wood: SCNMaterial = {
+	lazy var blackMaterial: SCNMaterial = {
 		let material = SCNMaterial()
-		material.diffuse.contents = R.image.wood()
+		material.diffuse.contents = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
 		material.locksAmbientWithDiffuse = true
 		return material
 	}()
 
-	lazy var metal: SCNMaterial = {
+	lazy var redMaterial: SCNMaterial = {
 		let material = SCNMaterial()
-		material.diffuse.contents = R.image.metal()
+		material.diffuse.contents = #colorLiteral(red: 1, green: 0.3098039216, blue: 0.2666666667, alpha: 1)
 		material.locksAmbientWithDiffuse = true
 		return material
 	}()
@@ -142,22 +142,16 @@ extension ARViewController {
 	func shape(for translation: float3) -> ZoneNode {
 		let node = ZoneNode()
 
-		let geometryCylinder = SCNCylinder(radius: 0.02, height: 1.2)
-		geometryCylinder.materials = [self.metal]
-		let cylinder = SCNNode(geometry: geometryCylinder)
-		node.addChildNode(cylinder)
+		let geometryCone = SCNCone(topRadius: 0.05, bottomRadius: 0.15, height: 0.6)
+		geometryCone.materials = [self.redMaterial]
+		let cone = SCNNode(geometry: geometryCone)
+		node.addChildNode(cone)
 
-		let geometryBox1 = SCNBox(width: 0.07, height: 0.02, length: 0.5, chamferRadius: 0.05)
-		geometryBox1.materials = [wood]
-		let box1 = SCNNode(geometry: geometryBox1)
-		box1.position = SCNVector3(0, -0.6, 0)
-		node.addChildNode(box1)
-
-		let geometryBox2 = SCNBox(width: 0.5, height: 0.02, length: 0.07, chamferRadius: 0.05)
-		geometryBox2.materials = [wood]
-		let box2 = SCNNode(geometry: geometryBox2)
-		box2.position = SCNVector3(0, -0.6, 0)
-		node.addChildNode(box2)
+		let bottomGeometry = SCNBox(width: 0.4, height: 0.01, length: 0.4, chamferRadius: 0.005)
+		bottomGeometry.materials = [self.blackMaterial]
+		let box = SCNNode(geometry: bottomGeometry)
+		box.position = SCNVector3(0, -0.3, 0)
+		node.addChildNode(box)
 
 		let boundingBox = node.boundingBox
 		node.pivot = SCNMatrix4MakeTranslation(0, (boundingBox.min.y - boundingBox.max.y) / 2, 0)
