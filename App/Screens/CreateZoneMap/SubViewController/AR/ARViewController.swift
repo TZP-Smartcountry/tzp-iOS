@@ -143,18 +143,18 @@ extension ARViewController {
 	func shape(for translation: float3) -> ZoneNode {
 		let node = ZoneNode()
 
-		let geometryCylinder = SCNCylinder(radius: 0.05, height: 1.2)
+		let geometryCylinder = SCNCylinder(radius: 0.02, height: 1.2)
 		geometryCylinder.materials = [self.metal]
 		let cylinder = SCNNode(geometry: geometryCylinder)
 		node.addChildNode(cylinder)
 
-		let geometryBox1 = SCNBox(width: 0.1, height: 0.05, length: 0.4, chamferRadius: 0.05)
+		let geometryBox1 = SCNBox(width: 0.07, height: 0.02, length: 0.5, chamferRadius: 0.05)
 		geometryBox1.materials = [wood]
 		let box1 = SCNNode(geometry: geometryBox1)
 		box1.position = SCNVector3(0, -0.6, 0)
 		node.addChildNode(box1)
 
-		let geometryBox2 = SCNBox(width: 0.4, height: 0.05, length: 0.1, chamferRadius: 0.05)
+		let geometryBox2 = SCNBox(width: 0.5, height: 0.02, length: 0.07, chamferRadius: 0.05)
 		geometryBox2.materials = [wood]
 		let box2 = SCNNode(geometry: geometryBox2)
 		box2.position = SCNVector3(0, -0.6, 0)
