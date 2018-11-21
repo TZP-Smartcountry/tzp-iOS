@@ -11,7 +11,7 @@ import RxSwift
 
 private enum Constants {
 
-	static let url = "https://7f8f3173.ngrok.io/api/subscriptions"
+	static let url = "https://1e31fd74.ngrok.io/api/subscriptions"
 	static let user = "user"
 	static let contentType = "Content-Type"
 	static let jsonContentType = "application/json"

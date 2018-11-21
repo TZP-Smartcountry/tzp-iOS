@@ -52,11 +52,11 @@
                             </connections>
                         </barButtonItem>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="eQE-Og-gaS">
-                            <rect key="frame" x="127" y="7.6666666666666679" width="121" height="29.000000000000004"/>
+                            <rect key="frame" x="127" y="7.6666666666666679" width="121" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
-                                <segment title="First"/>
-                                <segment title="Second"/>
+                                <segment title="Karte"/>
+                                <segment title="AR"/>
                             </segments>
                             <connections>
                                 <action selector="segmentedControlChangedWithControl:" destination="tJA-bE-Nb8" eventType="valueChanged" id="XAw-xY-rQl"/>
@@ -152,29 +152,67 @@
         <!--View Controller-->
         <scene sceneID="wP7-Dx-Gzt">
             <objects>
-                <viewController id="3av-PA-fdW" sceneMemberID="viewController">
+                <viewController id="3av-PA-fdW" customClass="ARViewController" customModule="tzp_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0fn-i3-FkL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Njb-QM-Cc0">
-                                <rect key="frame" x="176.66666666666666" y="351.66666666666669" width="22" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QXn-iQ-D5w" customClass="ARSCNView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="okS-Rp-ttw">
+                                <rect key="frame" x="150.33333333333334" y="16" width="74.333333333333343" height="34"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Platziere" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NaZ-mw-SBj">
+                                        <rect key="frame" x="8.0000000000000036" y="8" width="58.333333333333343" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.72131452917447558" green="0.72131452917447558" blue="0.72131452917447558" alpha="0.85415774828767121" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="NaZ-mw-SBj" firstAttribute="top" secondItem="okS-Rp-ttw" secondAttribute="top" constant="8" id="cDT-w6-x8f"/>
+                                    <constraint firstItem="NaZ-mw-SBj" firstAttribute="leading" secondItem="okS-Rp-ttw" secondAttribute="leading" constant="8" id="iZ6-z2-nFW"/>
+                                    <constraint firstAttribute="trailing" secondItem="NaZ-mw-SBj" secondAttribute="trailing" constant="8" id="uom-Ky-78W"/>
+                                    <constraint firstAttribute="bottom" secondItem="NaZ-mw-SBj" secondAttribute="bottom" constant="8" id="x6u-7I-zyx"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lbz-7t-FMY">
+                                <rect key="frame" x="149.66666666666666" y="622" width="76" height="38"/>
+                                <inset key="contentEdgeInsets" minX="15" minY="10" maxX="15" maxY="10"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="nextButtonTappedWithSender:" destination="3av-PA-fdW" eventType="touchUpInside" id="Iqq-b1-lpv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Njb-QM-Cc0" firstAttribute="centerX" secondItem="0fn-i3-FkL" secondAttribute="centerX" id="GQm-Ir-dqW"/>
-                            <constraint firstItem="Njb-QM-Cc0" firstAttribute="centerY" secondItem="0fn-i3-FkL" secondAttribute="centerY" id="feH-fe-YYW"/>
+                            <constraint firstItem="okS-Rp-ttw" firstAttribute="top" secondItem="0fn-i3-FkL" secondAttribute="top" constant="16" id="0Wf-6P-3e8"/>
+                            <constraint firstItem="okS-Rp-ttw" firstAttribute="centerX" secondItem="0fn-i3-FkL" secondAttribute="centerX" id="3ix-H5-XJS"/>
+                            <constraint firstItem="Lbz-7t-FMY" firstAttribute="centerX" secondItem="0fn-i3-FkL" secondAttribute="centerX" id="EPf-JK-azD"/>
+                            <constraint firstAttribute="bottom" secondItem="QXn-iQ-D5w" secondAttribute="bottom" id="J7U-qy-0tt"/>
+                            <constraint firstItem="okS-Rp-ttw" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6q7-v5-2Zf" secondAttribute="leading" constant="64" id="JZw-ZA-t0W"/>
+                            <constraint firstAttribute="trailing" secondItem="QXn-iQ-D5w" secondAttribute="trailing" id="V1S-Pf-ENh"/>
+                            <constraint firstItem="QXn-iQ-D5w" firstAttribute="leading" secondItem="0fn-i3-FkL" secondAttribute="leading" id="Vh9-HI-O1z"/>
+                            <constraint firstAttribute="bottom" secondItem="Lbz-7t-FMY" secondAttribute="bottom" constant="64" id="Wf9-jH-E61"/>
+                            <constraint firstItem="6q7-v5-2Zf" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="okS-Rp-ttw" secondAttribute="trailing" constant="64" id="hq5-k1-12O"/>
+                            <constraint firstItem="QXn-iQ-D5w" firstAttribute="top" secondItem="0fn-i3-FkL" secondAttribute="top" id="xyc-t3-a7U"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6q7-v5-2Zf"/>
                     </view>
+                    <connections>
+                        <outlet property="arView" destination="QXn-iQ-D5w" id="R6G-zv-GVg"/>
+                        <outlet property="hinView" destination="okS-Rp-ttw" id="zpg-4c-ikZ"/>
+                        <outlet property="hintLabel" destination="NaZ-mw-SBj" id="BLG-w3-iVT"/>
+                        <outlet property="nextButton" destination="Lbz-7t-FMY" id="8WG-rc-4Du"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8an-Rm-gIg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1537" y="954"/>
+            <point key="canvasLocation" x="1536.8" y="953.94088669950747"/>
         </scene>
     </scenes>
     <resources>

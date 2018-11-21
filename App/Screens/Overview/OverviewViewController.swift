@@ -27,6 +27,12 @@ class OverviewViewController: UITableViewController {
 		self.refreshControl = refreshControl
 	}
 
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+
+		self.viewModel.refreshZones()
+	}
+
 	func createBinding() {
 		self.viewModel.zones.drive(onNext: { [weak self] (zones) in
 			self?.zones = zones
@@ -34,8 +40,6 @@ class OverviewViewController: UITableViewController {
 			self?.tableView.reloadData()
 		})
 		.disposed(by: self.disposeBag)
-
-		self.viewModel.refreshZones()
 	}
 
 	@IBAction private func refreshZones() {

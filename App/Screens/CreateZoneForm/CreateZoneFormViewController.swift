@@ -104,7 +104,7 @@ class CreateZoneFormViewController: UIViewController {
 		if sender == self.moveButton {
 			zone.reason = "Umzug"
 		} else if sender == self.videoButton {
-			zone.reason = "Videodreh"
+			zone.reason = "Filmdreh"
 		} else if sender == self.otherButton {
 			zone.reason = "Andere"
 		}

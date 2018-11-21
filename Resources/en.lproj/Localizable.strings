@@ -11,3 +11,5 @@
 
 "Create.Map.Next.Button" = "Halteverbot sollte hier starten ...";
 "Create.Map.Proceed.Button" = "Halteverbot sollte hier enden ...";
+
+"AR.Hint" = "Platziere zwei Schilder, um uns zu zeigen, wo du dein Halteverbot gerne hättest";
