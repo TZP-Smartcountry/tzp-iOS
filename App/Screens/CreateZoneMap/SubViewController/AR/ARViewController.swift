@@ -32,14 +32,21 @@ class ARViewController: UIViewController {
 
 	lazy var blackMaterial: SCNMaterial = {
 		let material = SCNMaterial()
-		material.diffuse.contents = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+		material.diffuse.contents = R.image.black()
 		material.locksAmbientWithDiffuse = true
 		return material
 	}()
 
 	lazy var redMaterial: SCNMaterial = {
 		let material = SCNMaterial()
-		material.diffuse.contents = #colorLiteral(red: 1, green: 0.3098039216, blue: 0.2666666667, alpha: 1)
+		material.diffuse.contents = R.image.red()
+		material.locksAmbientWithDiffuse = true
+		return material
+	}()
+
+	lazy var redColorMaterial: SCNMaterial = {
+		let material = SCNMaterial()
+		material.diffuse.contents = #colorLiteral(red: 0.8178189993, green: 0.02066861093, blue: 0.01874339022, alpha: 1)
 		material.locksAmbientWithDiffuse = true
 		return material
 	}()
@@ -152,6 +159,12 @@ extension ARViewController {
 		let box = SCNNode(geometry: bottomGeometry)
 		box.position = SCNVector3(0, -0.3, 0)
 		node.addChildNode(box)
+
+		let topGeometry = SCNCylinder(radius: 0.05, height: 0.01)
+		topGeometry.materials = [self.redColorMaterial]
+		let topBox = SCNNode(geometry: topGeometry)
+		topBox.position = SCNVector3(0, 0.301, 0)
+		node.addChildNode(topBox)
 
 		let boundingBox = node.boundingBox
 		node.pivot = SCNMatrix4MakeTranslation(0, (boundingBox.min.y - boundingBox.max.y) / 2, 0)
