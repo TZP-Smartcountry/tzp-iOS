@@ -46,7 +46,6 @@ class SubscribeViewController: UIViewController {
 		self.poiDiameterView?.layer.borderWidth = 1
 
 		self.viewModel.state.drive(self.rx.stateChanged).disposed(by: self.disposeBag)
-		self.viewModel.state.map { $0 == .add }.drive(self.tabBarController?.tabBar.rx.hideBar()).disposed(by: self.disposeBag)
 		self.viewModel.subscriptions.drive(self.rx.subscriptions).disposed(by: self.disposeBag)
 		self.viewModel.zones.drive(self.rx.zones).disposed(by: self.disposeBag)
 
@@ -78,8 +77,16 @@ class SubscribeViewController: UIViewController {
 		return UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.addTapped(sender:)))
 	}
 
+	func cancelButton() -> UIBarButtonItem? {
+		return UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.cancelTapped(sender:)))
+	}
+
 	@IBAction func addTapped(sender: Any) {
 		self.viewModel.enterAddMode()
+	}
+
+	@IBAction func cancelTapped(sender: Any) {
+		self.viewModel.exitAddMode()
 	}
 
 	@IBAction private func locateMeTapped(sender: Any) {
@@ -128,7 +135,7 @@ extension Reactive where Base == SubscribeViewController {
 
 	var stateChanged: Binder<SubscribeViewModel.State> {
 		return Binder(base) { controller, state in
-			controller.navigationItem.rightBarButtonItem = state == .add ? nil : controller.addBarButton()
+			controller.navigationItem.rightBarButtonItem = state == .add ? controller.cancelButton() : controller.addBarButton()
 			controller.poiImageView?.isHidden = state == .display
 			controller.editView?.isHidden = state == .display
 			controller.poiDiameterView?.isHidden = state == .display

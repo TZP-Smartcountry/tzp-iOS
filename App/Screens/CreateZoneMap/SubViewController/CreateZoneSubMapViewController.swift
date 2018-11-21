@@ -20,12 +20,14 @@ class CreateZoneSubMapViewController: UIViewController {
 
 	let viewModel = CreateZoneSubMapViewModel()
 	private let disposeBag = DisposeBag()
+	private let manager = CLLocationManager()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
 		self.createBinding()
 		self.mapView?.delegate = self
+		self.manager.delegate = self
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
@@ -78,7 +80,7 @@ class CreateZoneSubMapViewController: UIViewController {
 
 // MARK: - MapView
 
-extension CreateZoneSubMapViewController: MKMapViewDelegate {
+extension CreateZoneSubMapViewController: MKMapViewDelegate, CLLocationManagerDelegate {
 
 	func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
 
@@ -104,6 +106,10 @@ extension CreateZoneSubMapViewController: MKMapViewDelegate {
 		renderer.lineDashPhase = 3
 
 		return renderer
+	}
+
+	func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+		self.mapView?.userTrackingMode = .follow
 	}
 }
 

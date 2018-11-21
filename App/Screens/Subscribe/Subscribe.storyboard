@@ -41,8 +41,11 @@
                                     <constraint firstAttribute="height" constant="1" id="noF-Ht-QSj"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_edit_poi" translatesAutoresizingMaskIntoConstraints="NO" id="yw2-no-Kzn">
+                                <rect key="frame" x="133.66666666666666" y="298" width="108" height="108"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ur-Mq-Pne" customClass="SubscribeEditView" customModule="tzp_Demo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="628" width="375" height="184"/>
+                                <rect key="frame" x="0.0" y="594" width="375" height="184"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uWA-eQ-aUD">
                                         <rect key="frame" x="16" y="16" width="343" height="136"/>
@@ -88,16 +91,13 @@
                                     <outlet property="titleLabel" destination="qHu-87-tEU" id="Oee-OT-iFz"/>
                                 </connections>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_edit_poi" translatesAutoresizingMaskIntoConstraints="NO" id="yw2-no-Kzn">
-                                <rect key="frame" x="169.66666666666666" y="370" width="36" height="36"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="DzJ-vg-5rN" firstAttribute="trailing" secondItem="Pda-4Q-Jbh" secondAttribute="trailing" constant="16" id="07a-V6-zyv"/>
                             <constraint firstItem="UFt-Xz-VkS" firstAttribute="centerY" secondItem="wFh-Vo-ecq" secondAttribute="centerY" id="8aq-K3-ObF"/>
+                            <constraint firstItem="DzJ-vg-5rN" firstAttribute="bottom" secondItem="0Ur-Mq-Pne" secondAttribute="bottom" id="DuG-MD-Yvz"/>
                             <constraint firstAttribute="bottom" secondItem="5MN-3k-KFy" secondAttribute="bottom" id="I5o-lc-M9q"/>
-                            <constraint firstAttribute="bottom" secondItem="0Ur-Mq-Pne" secondAttribute="bottom" id="J4T-td-pmk"/>
                             <constraint firstItem="yw2-no-Kzn" firstAttribute="centerX" secondItem="UFt-Xz-VkS" secondAttribute="centerX" id="JFP-Ad-Erg"/>
                             <constraint firstItem="0Ur-Mq-Pne" firstAttribute="leading" secondItem="wFh-Vo-ecq" secondAttribute="leading" id="RVi-4L-aUV"/>
                             <constraint firstItem="5MN-3k-KFy" firstAttribute="leading" secondItem="wFh-Vo-ecq" secondAttribute="leading" id="S8R-Jy-S5T"/>
@@ -151,7 +151,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_edit_poi" width="36" height="36"/>
-        <image name="ic_location" width="48" height="48"/>
+        <image name="ic_edit_poi" width="108" height="108"/>
+        <image name="ic_location" width="108" height="108"/>
     </resources>
 </document>

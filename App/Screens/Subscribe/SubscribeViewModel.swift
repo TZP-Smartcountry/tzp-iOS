@@ -47,6 +47,10 @@ class SubscribeViewModel {
 		self.stateRelay.accept(.add)
 	}
 
+	func exitAddMode() {
+		self.stateRelay.accept(.display)
+	}
+
 	func subscribe(radius: Double, location: CLLocationCoordinate2D) {
 		self.stateRelay.accept(.display)
 
