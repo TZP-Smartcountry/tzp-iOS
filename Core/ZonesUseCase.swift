@@ -54,6 +54,30 @@ class ZonesUseCase {
 		}
 	}
 
+	func create(_ zone: Zone) -> Completable {
+		guard
+			let url = URL(string: Constants.allURL),
+			let json = try? JSONEncoder().encode(zone) else {
+				return Completable.error(ApiError.error)
+		}
+
+		var request = URLRequest(url: url)
+		request.addValue(Constants.email, forHTTPHeaderField: Constants.user)
+		request.setValue(Constants.jsonContentType, forHTTPHeaderField: Constants.contentType)
+		request.httpMethod = "POST"
+
+		request.httpBody = json
+
+		return Completable.create { (completable) in
+
+			URLSession.shared.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
+				completable(.completed)
+			}.resume()
+
+			return Disposables.create()
+		}
+	}
+
 	func getMine() -> Single<[Zone]> {
 		guard let url = URL(string: Constants.mineURL) else {
 			return Single.error(ApiError.error)

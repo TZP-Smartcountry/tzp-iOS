@@ -10,23 +10,36 @@ import Foundation
 
 struct Zone: Codable {
 
-	let address: Address
-	let doubleSided: Bool
-	let location: Location
-	let reason: String
-	let signature: Signature?
-	let time: Time
+	var address: Address
+	var doubleSided: Bool
+	var location: Location
+	var reason: String
+	var signature: Signature?
+	var time: Time
+	var length: Double
+
+	init(_ coordinates: [[Double]], distance: Double) {
+		self.address = Address(city: "", country: "", number: "", street: "", zip: "")
+		self.doubleSided = false
+		self.location = Location(coordinates: coordinates)
+		self.reason = "Umzug"
+		self.signature = nil
+		self.time = Time(endDate: "2018-11-29", endTime: "17:00:00", startDate: "2018-11-27", startTime: "10:00:00")
+		self.length = Double(Int(distance))
+	}
 
 	struct Address: Codable {
 
-		let city: String
-		let country: String
-		let number: String
-		let street: String
+		var city: String
+		var country: String
+		var number: String
+		var street: String
+		var zip: String
 	}
 
 	struct Location: Codable {
 
+		let type = "LineString"
 		let coordinates: [[Double]]
 	}
 

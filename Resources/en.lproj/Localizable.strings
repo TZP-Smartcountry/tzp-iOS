@@ -8,3 +8,6 @@
 
 "Subscribe.Edit.Title" = "XXXX";
 "Subscribe.Edit.Button" = "XXXX";
+
+"Create.Map.Next.Button" = "Halteverbot sollte hier starten ...";
+"Create.Map.Proceed.Button" = "Halteverbot sollte hier enden ...";

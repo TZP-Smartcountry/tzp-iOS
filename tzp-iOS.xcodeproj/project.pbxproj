@@ -22,6 +22,13 @@
 		3ECB8B1021A4B4210032B923 /* ZoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB8B0F21A4B4210032B923 /* ZoneTableViewCell.swift */; };
 		3ECB8B1221A4B5780032B923 /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB8B1121A4B5780032B923 /* OverviewViewController.swift */; };
 		3ECB8B1421A4B5990032B923 /* OverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB8B1321A4B5990032B923 /* OverviewViewModel.swift */; };
+		3ECB8B1721A4C2D50032B923 /* CreateZoneMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB8B1621A4C2D50032B923 /* CreateZoneMapViewController.swift */; };
+		3ECB8B1921A4C2E40032B923 /* CreateZoneMapViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ECB8B1821A4C2E40032B923 /* CreateZoneMapViewController.storyboard */; };
+		3ECB8B1C21A4C8EC0032B923 /* CreateZoneSubMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB8B1B21A4C8EC0032B923 /* CreateZoneSubMapViewController.swift */; };
+		3ECB8B1E21A4C9550032B923 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB8B1D21A4C9550032B923 /* Extension.swift */; };
+		3ECB8B2021A4D08A0032B923 /* CreateZoneSubMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB8B1F21A4D08A0032B923 /* CreateZoneSubMapViewModel.swift */; };
+		3ECB8B2321A4E7C00032B923 /* CreateZoneFormViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ECB8B2221A4E7C00032B923 /* CreateZoneFormViewController.storyboard */; };
+		3ECB8B2521A4E8210032B923 /* CreateZoneFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB8B2421A4E8210032B923 /* CreateZoneFormViewController.swift */; };
 		3EF5D4AF21A42F0C0025BF03 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EF5D4AE21A42F0C0025BF03 /* TabBar.storyboard */; };
 		3EF5D4B221A430000025BF03 /* Overview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EF5D4B121A430000025BF03 /* Overview.storyboard */; };
 		3EF5D4B421A430650025BF03 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF5D4B321A430650025BF03 /* TabBarController.swift */; };
@@ -51,6 +58,13 @@
 		3ECB8B0F21A4B4210032B923 /* ZoneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneTableViewCell.swift; sourceTree = "<group>"; };
 		3ECB8B1121A4B5780032B923 /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		3ECB8B1321A4B5990032B923 /* OverviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewModel.swift; sourceTree = "<group>"; };
+		3ECB8B1621A4C2D50032B923 /* CreateZoneMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateZoneMapViewController.swift; sourceTree = "<group>"; };
+		3ECB8B1821A4C2E40032B923 /* CreateZoneMapViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateZoneMapViewController.storyboard; sourceTree = "<group>"; };
+		3ECB8B1B21A4C8EC0032B923 /* CreateZoneSubMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateZoneSubMapViewController.swift; sourceTree = "<group>"; };
+		3ECB8B1D21A4C9550032B923 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		3ECB8B1F21A4D08A0032B923 /* CreateZoneSubMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateZoneSubMapViewModel.swift; sourceTree = "<group>"; };
+		3ECB8B2221A4E7C00032B923 /* CreateZoneFormViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateZoneFormViewController.storyboard; sourceTree = "<group>"; };
+		3ECB8B2421A4E8210032B923 /* CreateZoneFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateZoneFormViewController.swift; sourceTree = "<group>"; };
 		3EF5D4AE21A42F0C0025BF03 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		3EF5D4B121A430000025BF03 /* Overview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Overview.storyboard; sourceTree = "<group>"; };
 		3EF5D4B321A430650025BF03 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -150,6 +164,8 @@
 		3E02CD0621A425C200854D16 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				3ECB8B2121A4E79E0032B923 /* CreateZoneForm */,
+				3ECB8B1521A4C2230032B923 /* CreateZoneMap */,
 				3E02CD0721A425C200854D16 /* Launch */,
 				3EF5D4AD21A42ED10025BF03 /* TabBar */,
 				3E02CD0921A425C200854D16 /* Subscribe */,
@@ -202,6 +218,34 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		3ECB8B1521A4C2230032B923 /* CreateZoneMap */ = {
+			isa = PBXGroup;
+			children = (
+				3ECB8B1A21A4C8D10032B923 /* SubViewController */,
+				3ECB8B1821A4C2E40032B923 /* CreateZoneMapViewController.storyboard */,
+				3ECB8B1621A4C2D50032B923 /* CreateZoneMapViewController.swift */,
+			);
+			path = CreateZoneMap;
+			sourceTree = "<group>";
+		};
+		3ECB8B1A21A4C8D10032B923 /* SubViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3ECB8B1B21A4C8EC0032B923 /* CreateZoneSubMapViewController.swift */,
+				3ECB8B1F21A4D08A0032B923 /* CreateZoneSubMapViewModel.swift */,
+			);
+			path = SubViewController;
+			sourceTree = "<group>";
+		};
+		3ECB8B2121A4E79E0032B923 /* CreateZoneForm */ = {
+			isa = PBXGroup;
+			children = (
+				3ECB8B2221A4E7C00032B923 /* CreateZoneFormViewController.storyboard */,
+				3ECB8B2421A4E8210032B923 /* CreateZoneFormViewController.swift */,
+			);
+			path = CreateZoneForm;
+			sourceTree = "<group>";
+		};
 		3EF5D4AD21A42ED10025BF03 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				3EF5D4BC21A43CF90025BF03 /* Rx */,
+				3ECB8B1D21A4C9550032B923 /* Extension.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -318,6 +363,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3ECB8B1921A4C2E40032B923 /* CreateZoneMapViewController.storyboard in Resources */,
+				3ECB8B2321A4E7C00032B923 /* CreateZoneFormViewController.storyboard in Resources */,
 				3EF5D4AF21A42F0C0025BF03 /* TabBar.storyboard in Resources */,
 				3EF5D4C621A449C40025BF03 /* Localizable.strings in Resources */,
 				3E02CD0F21A425C200854D16 /* LaunchScreen.storyboard in Resources */,
@@ -411,17 +458,22 @@
 				3ECB8B1021A4B4210032B923 /* ZoneTableViewCell.swift in Sources */,
 				3EF5D4B421A430650025BF03 /* TabBarController.swift in Sources */,
 				3ECB8B0221A456F80032B923 /* UIView+Rx.swift in Sources */,
+				3ECB8B2521A4E8210032B923 /* CreateZoneFormViewController.swift in Sources */,
 				3E02CD1121A425C200854D16 /* AppDelegate.swift in Sources */,
 				3E02CD0D21A425C200854D16 /* tzp_iOS.xcdatamodeld in Sources */,
+				3ECB8B1C21A4C8EC0032B923 /* CreateZoneSubMapViewController.swift in Sources */,
 				3ECB8B0D21A4A28E0032B923 /* ZoneAnnotation.swift in Sources */,
 				3EF5D4C021A443C20025BF03 /* Driver+Rx.swift in Sources */,
+				3ECB8B1E21A4C9550032B923 /* Extension.swift in Sources */,
 				3ECB8B0921A496B90032B923 /* ZonesUseCase.swift in Sources */,
 				3ECB8B0721A46F420032B923 /* Subscription.swift in Sources */,
 				3EF5D4BA21A43AC90025BF03 /* SubscribeViewModel.swift in Sources */,
 				3ECB8B0B21A497C70032B923 /* Zone.swift in Sources */,
 				3ECB8B0421A46E420032B923 /* SubscriptionUseCase.swift in Sources */,
 				3E02CD1521A4274500854D16 /* R.generated.swift in Sources */,
+				3ECB8B1721A4C2D50032B923 /* CreateZoneMapViewController.swift in Sources */,
 				3EF5D4B821A43A660025BF03 /* SubscribeViewController.swift in Sources */,
+				3ECB8B2021A4D08A0032B923 /* CreateZoneSubMapViewModel.swift in Sources */,
 				3ECB8B1221A4B5780032B923 /* OverviewViewController.swift in Sources */,
 				3EF5D4BE21A43D0C0025BF03 /* UITabBar+Rx.swift in Sources */,
 				3ECB8B1421A4B5990032B923 /* OverviewViewModel.swift in Sources */,

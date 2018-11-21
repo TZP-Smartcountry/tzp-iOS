@@ -90,12 +90,24 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="jhV-91-ggj">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="R77-qO-Nog"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="R77-qO-Nog">
+                            <connections>
+                                <segue destination="n8H-De-Nve" kind="presentation" id="ewH-Yx-Eby"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QDu-ur-R1z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1023.2" y="-30.295566502463057"/>
+        </scene>
+        <!--CreateZoneMapViewController-->
+        <scene sceneID="nVc-K7-H3l">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CreateZoneMapViewController" id="n8H-De-Nve" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rrw-P4-Pgb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1665" y="-30"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hbF-0s-9Xz">

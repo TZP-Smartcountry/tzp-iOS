@@ -49,15 +49,15 @@ class ZoneTableViewCell: UITableViewCell {
 		self.titleLabel?.text = zone.reason
 		self.dateLabel?.text = zone.time.displayString
 		self.addressLabel?.text = zone.address.displayString
-		self.statusImageView?.image = zone.signature?.status.image
-		self.statusImageView?.tintColor = zone.signature?.status.tint
+		self.statusImageView?.image = zone.signature?.status.image ?? R.image.ic_pending()
+		self.statusImageView?.tintColor = zone.signature?.status.tint ?? #colorLiteral(red: 0.6352941176, green: 0.6352941176, blue: 0.6549019608, alpha: 1)
 	}
 }
 
 private extension Zone.Address {
 
 	var displayString: String {
-		return "\(self.street) \(self.number), \(self.city)"
+		return "\(self.street) \(self.number), \(self.zip) \(self.city)"
 	}
 }
 
