@@ -70,7 +70,6 @@ class ARViewController: UIViewController {
 		config.planeDetection = .horizontal
 
 		self.arView?.session.run(config, options: [.removeExistingAnchors, .resetTracking])
-		self.arView?.debugOptions = [.showWorldOrigin, .showFeaturePoints]
 	}
 
 	@IBAction func panGestureRecognizer(gesture: UIPanGestureRecognizer) {
