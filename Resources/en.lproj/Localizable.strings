@@ -6,8 +6,8 @@
   Copyright © 2018 kondeichmann. All rights reserved.
 */
 
-"Subscribe.Edit.Title" = "XXXX";
-"Subscribe.Edit.Button" = "XXXX";
+"Subscribe.Edit.Title" = "Wählen Sie den Bereich aus, der Sie interessiert.\nSie erhalten eine Benachrichtigung, wenn es dort ein neues Halteverbot gibt.";
+"Subscribe.Edit.Button" = "Bereich abbonieren";
 
 "Create.Map.Next.Button" = "Halteverbot sollte hier starten ...";
 "Create.Map.Proceed.Button" = "Halteverbot sollte hier enden ...";
